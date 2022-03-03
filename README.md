@@ -196,13 +196,11 @@
 
     **Syntax**
     ```
-    php artisan make:middlewareMiddelwareName  
-    php artisan make:middlewareMiddelwareName  
+    php artisan make:middlewareMiddelwareName      
     ```
     **Example**
     ```
-    php artisan make:middlewareUserMiddleware  
-    php artisan make:middlewareUserMiddleware  
+    php artisan make:middlewareUserMiddleware      
     ```
 
     Now, UserMiddleware.php file will be created in app/Http/Middleware.
