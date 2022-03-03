@@ -206,3 +206,35 @@
     Now, UserMiddleware.php file will be created in app/Http/Middleware.
 
     ![UserMiddleware](./images/laravel-middlwware.png)
+12. ###  What do you understand by database migrations in Laravel? How can we use it?
+
+    Migrations can be defined as version control for the database, which allows us to modify and share the application's database schema easily. Migrations are commonly paired with **Laravel's schema builder** to build the application's database schema easily.
+
+    A migration file includes two methods, **up()** and** down()**. A method up() is used to add new tables, columns or indexes database and the down() method is used to reverse the operations performed by the up() method.
+
+    We can generate a migration and its file by using the **make:migration.**
+
+    ```
+    php artisan make:migration blog  
+    ```
+    By using it, a current date blog.php file will be created in database/migrations.
+
+13. ### What do you know about Service providers in Laravel?
+
+    Service providers can be defined as the central place to configure all the entire Laravel applications. Applications, as well as Laravel's core services, are bootstrapped via service providers. These are powerful tools for maintaining class dependencies and performing dependency injection. Service providers also instruct Laravel to bind various components into the Laravel's Service Container.
+
+    An artisan command is given here which can be used to generate a service provider:
+
+    ```
+    php artisan make: provider ClientsServiceProvider 
+    ```
+
+    Almost, all the service providers extend the Illuminate\Support\ServiceProviderclass. Most of the service providers contain below-listed functions in its file:
+     * Register() Function
+     * Boot() Function
+
+    Within the Register() method, one should only bind things into the service container. One should never attempt to register any event listeners, routes, or any other piece of functionality within the Register() method.
+
+    [![LARAVEL SERVICE PROVIDERS](https://i.ytimg.com/vi/VYPfncvYW-Y/maxresdefault.jpg)](https://www.youtube.com/watch?v=VYPfncvYW-Y)
+
+
