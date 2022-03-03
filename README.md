@@ -79,12 +79,107 @@
 
 10. ### How to clear cache in Laravel?
 
-    The syntax to clear cache in Laravel is given below:
+    **1. Clearing Configuration Cache**
 
-    * php artisan cache: clear
-    * php artisan config: clear
-    * php artisan cache: clear
-  
+    However, if you notice changes to the configuration values in .env file is not reflecting on your application, you may want to consider clearing the configuration cache with the following command:
+
+    ```
+    $ php artisan config:clear
+    Configuration cache cleared!
+    ```
+
+    If you want to quickly reset your configuration cache after clearing them, you may instead run the following command:
+
+    ```
+    $ php artisan config:cache
+    Configuration cache cleared!
+    Configuration cached successfully!
+    ```
+    Caching your configuration will also help clear the current configuration cache. So it helps save your time without having to run both commands.
+
+    **2. Route Caching**
+
+    Caching your routes will drastically decrease the amount of time it takes to register all of your application's routes. When you add a new route, you will have to clear your route cache for the new route to take effect.
+
+    **Clearing Route Cache**
+
+    The following command will clear all route cache in your application:
+
+    ```
+    $ php artisan route:clear
+    Route cache cleared!
+    ```
+    To cache your routes again, simply run the following command:
+
+    ```$ php artisan route:cache
+    Route cache cleared!
+    Routes cached successfully!
+    ```
+    Again, running the above command alone is enough to clear your previous route cache and rebuild a new one.
+
+    **3. Views Caching**
+
+    Views are cached into compiled views to increase performance when a request is made. By default, Laravel will determine if the uncompiled view has been modified more recently than the compiled view, before deciding if it should recompile the view.
+
+    **Clearing View Cache**
+
+    However, if for some reason your views are not reflecting recent changes, you may run the following command to clear all compiled views cache:
+
+    ```
+    $ php artisan view:clear
+    Compiled views cleared!
+    ```
+    In addition, Laravel also provides an Artisan command to precompile all of the views utilized by your application. Similarly, the command also clears the view cache before recompiling a new set of views:
+
+    ```
+    $ php artisan view:cache
+    Compiled views cleared!
+    Blade templates cached successfully!
+    ```
+    **4. Events Cache**
+
+    If you are using Events in your Laravel application, it is recommended to cache your Events, as you likely do not want the framework to scan all of your listeners on every request.
+
+    **Clearing Events Cache**
+    When you want to clear your cached Events, you may run the following Artisan command:
+    ```
+    $ php artisan event:clear
+    Cached events cleared!
+    ```
+    Likewise, caching your Events also clear any existing cache in the framework before a new cache is rebuilt:
+
+    ```
+    $ php artisan event:cache
+    Cached events cleared!
+    Events cached successfully!
+    ```
+    **5. Application Cache**
+
+    Using Laravel's Cache is a great way to speed up frequently accessed data in your application. While developing your application involving cache, it is important to know how to flush all cache correctly to test if your cache is working properly.
+
+    **Clearing Application Cache**
+
+    To clear your application cache, you may run the following Artisan command:
+
+    ```
+    $ php artisan cache:clear
+    Application cache cleared!
+    ```
+    **6. Clearing All Cache**
+
+    Laravel provides a handy Artisan command that helps clear ALL the above caches that we have covered above. It is a convenient way to reset all cache in your application, without having to run multiple commands introduced before.
+
+    To clear all Laravel's cache, just run the following command:
+
+    ```
+    $ php artisan optimize:clear
+    Compiled views cleared!
+    Application cache cleared!
+    Route cache cleared!
+    Configuration cache cleared!
+    Compiled services and packages files removed!
+    Caches cleared successfully!
+    ```
 
 11. ### How will you explain middleware in Laravel?
     As the name suggests, middleware works as a middleman between request and response. Middleware is a form of HTTP requests filtering mechanism. For example, Laravel consists of middleware which verifies whether the user of the application is authenticated or not. If a user is authenticated and trying to access the dashboard then, the middleware will redirect that user to home page; otherwise, a user will be redirected to the login page.
