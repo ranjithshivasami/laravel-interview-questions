@@ -76,6 +76,8 @@
     Yes, Laravel provides support for popular caching backends like **Memcached** and **Redis**.
 
     By default, Laravel is configured to use file cache driver, which is used to store the serialized or cached objects in the file system. For huge projects, it is suggested to use **Memcached** or **Redis**.
+    ### Video link
+    [<img src="https://i.ytimg.com/vi/djYRQtfRSH8/maxresdefault.jpg" width="170" height="100">](https://www.youtube.com/watch?v=djYRQtfRSH8&list=PLreYfy6R-5ckUjeS-nld1JDSEqCy-htt0&index=1)
 
 10. ### How to clear cache in Laravel?
 
@@ -236,4 +238,16 @@
     Within the Register() method, one should only bind things into the service container. One should never attempt to register any event listeners, routes, or any other piece of functionality within the Register() method.
     
     ### video link
-    [<img src="https://i.ytimg.com/vi/VYPfncvYW-Y/maxresdefault.jpg" width="170" height="100">](https://www.youtube.com/watch?v=VYPfncvYW-Y){:target="_blank"}
+    [<img src="https://i.ytimg.com/vi/VYPfncvYW-Y/maxresdefault.jpg" width="170" height="100">](https://www.youtube.com/watch?v=VYPfncvYW-Y)
+
+
+
+14. ### How can we get data between two dates using Query in Laravel?
+
+    We can use **whereBetween()** method to retrieve the data between two dates with Query.
+
+    Example
+    ```
+    Blog::whereBetween('created_at', [$date1, $date2])->get();  
+    ```
+15. ### What do you know about CSRF token in Laravel? How can someone turn off CSRF protection for a specific route?
