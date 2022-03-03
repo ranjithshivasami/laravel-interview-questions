@@ -380,3 +380,198 @@
     ### video link
 
     [<img src="https://i.ytimg.com/vi/PGVqkEZiUoc/maxresdefault.jpg" width="170" height="100">](https://www.youtube.com/watch?v=PGVqkEZiUoc)
+
+23. ### What do you know about Laravel Contracts?
+
+    Laravel's Contracts are the set of interfaces which are responsible for defining the core functionality of services provided by the Laravel framework.
+
+    ### video link
+
+    [<img src="https://i.ytimg.com/vi/IrIZ7wiWocg/maxresdefault.jpg" width="170" height="100">](https://www.youtube.com/watch?v=IrIZ7wiWocg)
+
+24. ### How will you explain homestead in Laravel?
+
+    Homestead is an official, pre-packaged, vagrant virtual machine which provides Laravel developers all the necessary tools to develop Laravel out of the box. It also includes **Ubuntu, Gulp, Bower**, and other development tools which are useful in developing full-scale web applications. It provides a development environment which can be used without the additional need to install PHP, a web server, or any other server software on the machine.
+
+25. ### How can we get the user's IP address in Laravel?
+
+    We can get the user's IP address using:
+
+    ```
+    public function getUserIp(Request $request){  
+        // Gettingip address of remote user  
+        return $user_ip_address=$request->ip();  
+    }  
+    ```
+
+26. ### How can we use the custom table in Laravel?
+    We can easily use custom table in Laravel by overriding protected $table property of Eloquent. Here, is the sample:
+
+    ```
+    class User extends Eloquent{  
+        protected $table="my_user_table";  
+    }  
+    ```
+27. ### What is the use of the Eloquent cursor() method in Laravel?
+
+    The cursor method allows us to iterate through our database using a cursor, which will only execute a single query. While processing large amounts of data, the cursor method may be used to reduce your memory usage greatly.
+
+    ```
+    foreach (Product::where('name', 'bar')->cursor() as $flight) {  
+        //make some stuff  
+    }  
+    ```
+28. ### How will you create a helper file in Laravel?
+    We can create a helper file using composer as per the given below steps:
+
+    Make a file "app/helpers.php" within the app folder.
+
+    Add
+    ```
+    "files": [  
+    "app/helpers.php"  
+    ]  
+    ```
+    in the "autoload" variable.
+
+    Now update composer.json with composer dump-autoload or composer update.
+
+29. ###  What is the use of PHP compact function?
+    PHP compact function receives each key and tries to search a variable with that same name. If a variable is found, then it builds an associate array.
+
+30. ### Explain some benefits of Laravel over other PHP frameworks.
+    There are few benefits of Laravel which can be considered over other PHP frameworks:
+
+    * In Laravel, Setup and customization process is fast and easy as compared to others.
+    * Laravel supports multiple file systems.
+    * It has pre-loaded packages like **Laravel Socialite, Laravel cashier, Laravel Passport, Laravel elixir, and Laravel Scout**, etc.
+    * It consists of in-built Authentication System.
+    * It supports Eloquent ORM (Object Relation Mapping) with PHP active record implementation.
+    * "Artisan" command-line tool for creating a database structure, code skeleton,  and build their migration.
+
+31. ### Which types of relationships are available in Laravel Eloquent?
+    Below are the types of relationships that Laravel Eloquent ORM supports:
+
+    * One to One
+    * One to Many
+    * One to Many (Inverse)
+    * Many to Many
+    * Has Many Through
+    * Polymorphic Relations
+    * Many To Many Polymorphic Relations
+
+32. ### How can we implement a package in Laravel?
+
+    We can implement a package in Laravel by:
+
+    * Creating a package folder and name it.
+    * Creating Composer.json file for the package.
+    * Loading package through main composer.json and PSR-4.
+    * Creating a Service Provider.
+    * Creating a Controller for the package.
+    * Creating a Routes.php file.
+
+33. ### What do you know about Traits in Laravel?
+
+    PHP Traits is a group of methods which can be included within another class. A Trait cannot be instantiated by itself like an abstract class. Traits are generated to reduce the limitations of single inheritance in PHP. It allows a developer to reuse sets of methods freely in various independent classes living in different class hierarchies.
+
+    ### video link
+    ### Traits in php 
+    [<img src="https://i.ytimg.com/vi/PMruqUC4Qpc/maxresdefault.jpg" width="170" height="100">](https://www.youtube.com/watch?v=PMruqUC4Qpc)
+    
+    ### Traits in Laravel: Real Usage Examples
+    [<img src="https://i.ytimg.com/vi/6mN0Oj6xR30/maxresdefault.jpg" width="170" height="100">](https://www.youtube.com/watch?v=6mN0Oj6xR30)
+    
+34. ### How can someone change the default database type in Laravel?
+
+    Laravel is configured to use MySQL by default.
+
+    To change its default database type, edit the file config/database.php:
+
+    * Search for 'default' =>env('DB_CONNECTION', 'mysql')
+    * Change it to whatever required like 'default' =>env('DB_CONNECTION', 'sqlite')
+  
+  
+    By using it, MySQL changes to SQLite.
+
+35. ### How can we use maintenance mode in Laravel
+
+    When an application is in maintenance mode, a custom view is displayed for all requests into the application. It makes it easy to "disable" application while it is updating or performing maintenance. A maintenance mode check is added in the default middleware stack for our application. When an application is in maintenance mode, a **MaintenanceModeException** will be thrown with a status code of 503.
+
+    We can enable or disable maintenance mode in Laravel 5, simply by executing the below command:
+
+    ```
+    // Enable maintenance mode  
+    php artisan down  
+    
+    // Disable maintenance mode  
+    php artisan up  
+    ```
+
+36. ### How can we create a record in Laravel using eloquent?
+
+    We need to create a new model instance if we want to create a new record in the database using Laravel eloquent. Then we are required to set attributes on the model and call the save() method.
+
+    ```
+    public functionsaveProduct(Request $request )  
+    $product = new product;  
+    $product->name = $request->name;  
+    $product->description = $request->name;  
+    $product->save();  
+    ```
+37. ### How can we check the logged-in user info in Laravel?
+
+    User() function is used to get the logged-in user
+
+    ```
+    if(Auth::check()){  
+        $loggedIn_user=Auth::User();  
+        dd($loggedIn_user);  
+    }  
+    ```
+
+38. ### How will you describe Fillable Attribute in a Laravel model?
+
+    In eloquent ORM, $fillable attribute is an array containing all those fields of table which can be filled using mass-assignment.
+
+    Mass assignment refers to sending an array to the model to directly create a new record in Database.
+
+    ```
+    class User extends Model {  
+        protected $fillable = ['name', 'email', 'mobile'];   
+        // All fields inside $fillable array can be mass-assigned  
+    }  
+    ```
+39. ### How will you explain Guarded Attribute in a Laravel model?
+
+    The guarded attribute is the opposite of fillable attributes.
+
+    In Laravel, fillable attributes are used to specify those fields which are to be mass assigned. Guarded attributes are used to specify those fields which are not mass assignable.
+
+    ```
+    class User extends Model {  
+        protected $guarded = ['role'];   
+        // All fields inside the $guarded array are not mass-assignable  
+    }  
+    ```
+    If we want to block all the fields from being mass-assigned, we can use:
+
+    ```
+    protected $guarded = ['*'];  
+    ```
+    $fillable serves as a "white list" whereas $guarded functions serves like a "black list". One should use either $fillable or $guarded.
+
+40. ### What do you know about Closures in Laravel?
+
+    In Laravel, a Closure is an anonymous method which can be used as a **callback** function. It can also be used as a parameter in a function. It is possible to pass parameters into a Closure. It can be done by changing the Closure function call in the **handle()** method to provide parameters to it. A Closure can access the variables outside the scope of the variable.
+    ```
+        function handle(Closure $closure) {  
+            $closure();  
+        }  
+        handle(function(){  
+            echo 'Interview Question';  
+        });  
+    ```
+    It is started by adding a Closure parameter to the handle() method. We can call the handle() method and pass a service as a parameter.
+
+    By using $closure(); in the handle() method, we tell Laravel to execute the given Closure which will then display the 'Interview Question.'
