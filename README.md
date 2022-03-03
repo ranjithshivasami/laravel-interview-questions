@@ -7,7 +7,7 @@
 
    * Eloquent ORM
    * Query builder
-   * everse Routing
+   * Reverse Routing
    * Restful Controllers
    * Migrations
    * Database Seeding
