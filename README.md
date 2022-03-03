@@ -343,3 +343,40 @@
     **PHP artisan make controller controller_name**
 
     This command is used to build a new controller file in app/Http/Controllers folder.
+
+21. ### How will you explain Events in Laravel?
+
+    An event is an activity or occurrence recognized and handled by the program. Events in Laravel provide simple observer implementations which allow us to subscribe and listen for events within our application. The event classes are stored in app/Events, while their listeners are stored in app/Listeners of our application. These can be generated using Artisan console commands. A single event may contain multiple listeners that do not depend on each other.
+
+    There are some events examples in Laravel which are:
+
+    * A new user is registered.
+    * A new comment is posted.
+    * User login/logout.
+    * A new product is added.
+
+22. ### What do you understand by Lumen?
+
+    Lumen is a PHP micro-framework built on Laravel's top components. It is created for building Laravel based micro-services and blazing fast APIs. It is one of the fastest micro-frameworks available. Lumen is not a complete web framework like Laravel and used for creating APIs only. Therefore, most of the components, such as HTTP sessions, cookies, and templating, are excluded from Lumen. Lumen provides support for features such as logging, routing, caching queues, validation, error handling, middleware, dependency injection, controllers, blade templating, command scheduler, database abstraction, the service container, and Eloquent ORM, etc.
+
+    We can install Lumen using composer by running the command given below:
+
+    ```
+    composer create-project --prefer-distlaravel/lumen blog  
+    ```
+
+22. ### Explain the Service container and its advantages.
+
+    Service container in Laravel is one of the most powerful features. It is an important, powerful tool for resolving class dependencies and performing dependency injection in Laravel. It is also known as **IoC container.**
+
+    Dependency injection is a term which essentially means that class dependencies are "injected" into the class by the constructor or, in some cases," setter" methods.
+
+    **Advantages of Service Container**
+
+    * It can handle class dependencies on object creation.
+    * It can combine interfaces to concrete classes.
+    * 
+    
+    ### video link
+
+    [<img src="https://i.ytimg.com/vi/PGVqkEZiUoc/maxresdefault.jpg" width="170" height="100">](https://www.youtube.com/watch?v=PGVqkEZiUoc)
