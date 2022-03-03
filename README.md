@@ -565,13 +565,35 @@
 
     In Laravel, a Closure is an anonymous method which can be used as a **callback** function. It can also be used as a parameter in a function. It is possible to pass parameters into a Closure. It can be done by changing the Closure function call in the **handle()** method to provide parameters to it. A Closure can access the variables outside the scope of the variable.
     ```
-        function handle(Closure $closure) {  
-            $closure();  
-        }  
-        handle(function(){  
-            echo 'Interview Question';  
-        });  
+    function handle(Closure $closure) {  
+        $closure();  
+    }  
+    handle(function(){  
+        echo 'Interview Question';  
+    });  
     ```
     It is started by adding a Closure parameter to the handle() method. We can call the handle() method and pass a service as a parameter.
 
     By using $closure(); in the handle() method, we tell Laravel to execute the given Closure which will then display the 'Interview Question.'
+
+41. ### What are service providers in laravel?
+
+    Service providers in laravel application is the central place where application is bootstrapped. That is, laravel’s core services and our application’s services, classes and their dependencies are injected in service container through providers. 
+
+    ### video link
+        
+    [<img src="https://i.ytimg.com/vi/VYPfncvYW-Y/maxresdefault.jpg" width="170" height="100">](https://www.youtube.com/watch?v=VYPfncvYW-Y)
+    
+42. ### Laravel Events and Listeners
+
+    Events are just ways to alert your application that an action has happened, and the events can be dispatched at any point of your application, the controller, the model, the middleware, anywhere — even in the blade files.
+
+    Listeners, like the name implies, listens for events that occur in your application, but they do not just listen to any event, each listener must be mapped to an event before it listens for that event.
+
+    For a listener to respond to a dispatched event, the listener class must be mapped to a particular event class. These mappings happen in the EventServiceProvider class which can be found in the app\Providers folder.
+
+    An event can have multiple listeners mapped to it and when it is dispatched, all listening classes will be triggered in succession following the order in which it is mapped.
+
+    ### video link
+        
+    [<img src="https://i.ytimg.com/vi/VYPfncvYW-Y/maxresdefault.jpg" width="170" height="100">](https://www.youtube.com/watch?v=LvvZ0jqZnBU)
