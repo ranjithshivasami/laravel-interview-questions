@@ -251,3 +251,95 @@
     Blog::whereBetween('created_at', [$date1, $date2])->get();  
     ```
 15. ### What do you know about CSRF token in Laravel? How can someone turn off CSRF protection for a specific route?
+
+    CSRF protection stands for **Cross-Site Request Forgery** protection. CSRF detects unauthorized attacks on web applications by the unauthorized users of a system. The built-in CSRF plug-in is used to create CSRF tokens so that it can verify all the operations and requests sent by an active authenticated user.
+
+    To turn off CSRF protection for a specific route, we can add that specific URL or Route in $except variable which is present in the app\Http\Middleware\VerifyCsrfToken.phpfile.
+
+    ```
+    classVerifyCsrfToken extends BaseVerifier  
+    {  
+        protected $except = [  
+             'Pass here your URL',  
+        ];  
+    }  
+    ```
+
+16. ### List some official packages provided by Laravel?
+
+    There are some official packages provided by Laravel which are given below:
+
+    **Cashier**
+
+    Laravel cashier implements an expressive, fluent interface to Stripe's and Braintree's subscription billing services. It controls almost all of the boilerplate subscription billing code you are dreading writing. Moreover, the cashier can also control coupons, subscription quantities, swapping subscription, cancellation grace periods, and even generate invoice PDFs.
+
+    **Envoy**
+
+    Laravel Envoy is responsible for providing a clean, minimal syntax for defining frequent tasks that we run on our remote servers. Using Blade style syntax, one can quickly arrange tasks for deployment, Artisan commands, and more. Envoy only provides support for Mac and Linux.
+
+    **Passport**
+
+    Laravel is used to create API authentication to act as a breeze with the help of Laravel passport. It further provides a full Oauth2 server implementation for Laravel application in a matter of minutes. Passport is usually assembled on top of League OAuth2 server which is maintained by Alex Bilbie.
+
+    **Scout**
+
+    Laravel Scout is used for providing a simple, driver-based solution for adding full-text search to the eloquent models. Using model observers, Scout automatically keeps search indexes in sync with eloquent records.
+
+    **Socialite**
+
+    Laravel Socialite is used for providing an expressive, fluent interface to OAuth authentication with Facebook, Twitter, Google, and Linkedln, etc. It controls almost all the boilerplate social authentication code that you are dreading writing.
+
+17. ### What do you know about Facades in Laravel? Explain.
+
+    Laravel Facades provide static-like interface classes which are available in the application's service container. Laravel self-ships with several available facades, gives access to almost all features of Laravel. Facades also help to access a service directly from the container itself. It is described in the Illuminate\Support\Facades namespace. Hence, it is easy to use.
+
+    **Example**
+    ```
+        use Illuminate\Support\Facades\Cache;  
+
+        Route::get('/cache', function () {  
+          return Cache::get('PutkeyNameHere');  
+        })
+    ```
+    ### video link
+
+    [<img src="https://i.ytimg.com/vi/zD2VJhOdI5c/maxresdefault.jpg" width="170" height="100">](https://www.youtube.com/watch?v=zD2VJhOdI5c)
+
+18. ### How can we check the Laravel current version?
+
+    One can easily check the current version of Laravel installation using the **-version** option of artisan command.
+
+    ```
+    $php artisan -version  
+    ```
+19. ### How will you explain dd() function in Laravel?
+
+    dd stands for "**Dump and Die**." Laravel's dd() function can be defined as a helper function, which is used to dump a variable's contents to the browser and prevent the further script execution.
+
+20. ### What do you know about PHP artisan? Mention some artisan command.
+
+    PHP artisan is a command-line interface/tool provided with Laravel. It consists of several useful commands which can be helpful while building an application. There are few artisan commands given below:
+
+    **PHP artisan list**
+
+    A 'list' command is used to view a list of all available Artisan commands.
+
+    **PHP artisan help**
+
+    Every command also contains a 'help' screen, which is used to display and describe the command's available arguments and options. To display a help screen, run 'help' command.
+
+    **PHP artisan tinker**
+
+    Laravel's artisan tinker is a repl (Read-Eval-Print Loop). Using tinker, one can write actual PHP code through command-line. One can even update or delete table records in the database.
+
+    **PHP artisan -version**
+
+    By using this command, one can view the current version of Laravel installation.
+
+    **PHP artisan make model model_name**
+
+    This command creates a model 'model_name.php' under the 'app' directory.
+
+    **PHP artisan make controller controller_name**
+
+    This command is used to build a new controller file in app/Http/Controllers folder.
