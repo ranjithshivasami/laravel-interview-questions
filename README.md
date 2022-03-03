@@ -235,6 +235,6 @@
 
     Within the Register() method, one should only bind things into the service container. One should never attempt to register any event listeners, routes, or any other piece of functionality within the Register() method.
 
-    [![LARAVEL SERVICE PROVIDERS](https://i.ytimg.com/vi/VYPfncvYW-Y/maxresdefault.jpg)](https://www.youtube.com/watch?v=VYPfncvYW-Y)
+    [![LARAVEL SERVICE PROVIDERS](https://i.ytimg.com/vi/VYPfncvYW-Y/maxresdefault.jpg =x250)](https://www.youtube.com/watch?v=VYPfncvYW-Y)
 
 
